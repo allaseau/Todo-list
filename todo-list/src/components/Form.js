@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { v4 as uuidv4 } from "uuid"
 
-const form = ({ input, setInput, todo, setTodo, editTodo, setEditTodo }) => {
+const Form = ({ input, setInput, todo, setTodo, editTodo, setEditTodo }) => {
     const updateTodo = (title, id, completed) => {
         const newTodo = todo.map((todo) =>
             todo.id === id ? { title, id, completed } : todo
@@ -46,4 +46,4 @@ const form = ({ input, setInput, todo, setTodo, editTodo, setEditTodo }) => {
     )
 }
 
-export default form
+export default Form

@@ -5,18 +5,18 @@ const TodoList = ({ todo, setTodo, setEditTodo }) => {
     const handleComplete = (todo) => {
         setTodo(
             todo.map((item) => {
-                if(item.id === todo.id){
-                    return {...item, completed: !item.completed};
+                if (item.id === todo.id) {
+                    return { ...item, completed: !item.completed };
                 }
                 return item;
             })
         );
     };
-    const handleEdit = ({id}) => {
+    const handleEdit = ({ id }) => {
         const findTodo = todo.find((todo) => todo.id === id);
         setEditTodo(findTodo);
     };
-    const handleDelete = ({id}) => {
+    const handleDelete = ({ id }) => {
         setTodo(todo.filter((todo) => todo.id !== id))
     };
     return (
@@ -26,7 +26,7 @@ const TodoList = ({ todo, setTodo, setEditTodo }) => {
                     <input
                         type="text"
                         value={todo.title}
-                        className={`list ${todo.completed}`}
+                        className={`list ${todo.completed ? "complete" : ""}`}
                         onChange={(event) => event.preventDefault()}
                     />
                     <div>
